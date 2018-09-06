@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (this.transform.tag == "Wood_Ball_Player")
+        if (this.transform.tag == "Wood_Ball_Player" && other.transform.tag == "Fire_Machine")
         {
             if ((DateTime.Now.Ticks - startTime) / 10000 >= 5000)    //当前时间减去木球进入火焰时的初始时间是否超过了5S，超过就烧掉
             {
