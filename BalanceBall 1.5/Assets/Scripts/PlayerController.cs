@@ -174,10 +174,12 @@ public class PlayerController : MonoBehaviour {
         if (health3.isActiveAndEnabled)
         {
             health3.enabled = false;
+            rb.MovePosition(originPosition);
         }
         else if (health2.isActiveAndEnabled)
         {
             health2.enabled = false;
+            rb.MovePosition(originPosition);
         }
         else if (health1.isActiveAndEnabled)
         {
@@ -191,7 +193,6 @@ public class PlayerController : MonoBehaviour {
             SceneManager.LoadScene("End");
             return;
         }
-        rb.MovePosition(originPosition);
     }
 
     // 碰撞开始
@@ -255,14 +256,14 @@ public class PlayerController : MonoBehaviour {
             Debug.Log(rb.position.y);
         {
             if(rb.position.y < 2)
-                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.005f, ForceMode.Impulse);
+                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.004f, ForceMode.Impulse);
             if(rb.position.y < 3)
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.003f, ForceMode.Impulse);
             if(rb.position.y < 4)
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.0018f, ForceMode.Impulse);
             if(rb.position.y < 5)
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.0015f, ForceMode.Impulse);
-            this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.001f, ForceMode.Impulse);
+            this.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.0013f, ForceMode.Impulse);
         }
     }
 
